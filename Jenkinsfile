@@ -8,14 +8,18 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 '''
             }
-			steps {
+		 		  
+        }
+		stage ('Change the path') {
+           steps {
           sh "$PWD"
-          dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-master'){
+          dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-maste'){
             sh "$PWD"
           }
-            sh "$PWD"
-        } 		  
-        }
+          sh "$PWD"
+        } 
+		
+		}
 		    
         stage ('Build') {
             steps {
