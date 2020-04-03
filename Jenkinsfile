@@ -2,7 +2,7 @@ pipeline {
 agent any
  
 tools{
-maven 'Maven 3.5.4'
+maven 'Maven_3.5.4'
 jdk 'java 8'
 }
  
