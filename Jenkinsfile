@@ -15,7 +15,6 @@ pipeline {
           dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-master'){
             sh "$PWD"
           }
-          sh "$PWD"
         } 
 		
 		}
