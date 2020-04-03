@@ -23,13 +23,13 @@ stages {
                }
             }
         }
- stage ('Deploy for staging'){
-  steps {
-    build job: 'Deploy-to-staging'
+   stage ('Deploy for staging'){
+    steps {
+       build job: 'Deploy-to-staging'
+    }
+   }
   }
- }
-}
- stage ('Deploy To Production') {
+   stage ('Deploy To Production') {
             steps {
                 timeout(time:5, unit:'DAYS'){
 				    input message:'Approve PRODUCTION Deployment?'
