@@ -28,7 +28,6 @@ stages {
        build job: 'Deploy-to-staging'
     }
    }
-  }
    stage ('Deploy To Production') {
             steps {
                 timeout(time:5, unit:'DAYS'){
@@ -45,4 +44,5 @@ stages {
 		  }
 		 }
     }
+}
 }
