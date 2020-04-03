@@ -29,4 +29,20 @@ stages {
   }
  }
 }
+ stage ('Deploy To Production') {
+            steps {
+                timeout(time:5, unit:'DAYS'){
+				    input message:'Approve PRODUCTION Deployment?'
+            }
+			build job: 'Deploy-to-Prod'
+        }
+		post {
+		  success {
+		    echo 'Code deployed to production'
+		  }
+		  failure {
+		    echo 'Deployment failed'
+		  }
+		 }
+    }
 }
