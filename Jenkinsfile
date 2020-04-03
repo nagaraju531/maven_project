@@ -22,6 +22,11 @@ stages {
                   archiveArtifacts artifacts: '**/target/*.war'
                }
             }
+        }
+ stage ('Deploy for staging'){
+  steps {
+    build job: 'Deploy-to-staging'
   }
+ }
 }
 }
