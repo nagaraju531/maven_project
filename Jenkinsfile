@@ -13,7 +13,7 @@ stages {
    stage ('Build project') {
     steps {
        dir("/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-master"){
-       sh 'mvn clean verify'
+       sh 'mvn clean compile package'
        }
      }
   }
