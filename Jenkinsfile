@@ -13,7 +13,7 @@ pipeline {
 		stage ('Change the path') {
            steps {
           sh "$PWD"
-          dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-maste'){
+          dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-master'){
             sh "$PWD"
           }
           sh "$PWD"
