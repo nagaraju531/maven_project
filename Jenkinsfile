@@ -8,8 +8,15 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 '''
             }
-            
+			steps {
+          sh "$PWD"
+          dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-master'){
+            sh "$PWD"
+          }
+            sh "$PWD"
+        } 		  
         }
+		    
         stage ('Build') {
             steps {
                 sh 'mvn clean package'
