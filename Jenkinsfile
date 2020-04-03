@@ -16,6 +16,12 @@ stages {
        sh 'mvn clean compile package'
        }
      }
+     post {
+               success {
+                  echo 'Now Archiving'
+                  archiveArtifacts artifacts: '**/target/*.war'
+               }
+            }
   }
 }
 }
