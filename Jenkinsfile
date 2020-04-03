@@ -10,14 +10,13 @@ pipeline {
             }
 		 		  
         }
-		stage ('Change the path') {
+		stage ('Change the new path') {
            steps {
           dir('/root/.jenkins/workspace/Packagefile/java-maven-calculator-web-app-master'){
             sh "$PWD"
           }
-        } 
-		
-		}
+        } 	
+	}
 		    
         stage ('Build') {
             steps {
