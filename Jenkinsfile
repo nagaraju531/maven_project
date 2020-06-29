@@ -12,7 +12,7 @@ pipeline {
                 timeout(time: 1, unit: "MINUTES")
             }
             steps {
-                sh 'build.sh'
+                echo 1
             }
         }
 
