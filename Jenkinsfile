@@ -12,7 +12,7 @@ pipeline {
                 timeout(time: 1, unit: "MINUTES")
             }
             steps {
-                echo 1
+                sh 'printf "\\e[31mSome tests execution here...\\e[0m\\n"'
             }
         }
 
