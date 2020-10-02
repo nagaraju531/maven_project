@@ -2,4 +2,21 @@
 - hosts: all
   become_user: yes
   connection: ssh
-  gather_facts: yes
+  gather_facts: no
+  tasks:
+  - name: Copy file to tomcat server
+    copy:
+     src: /var/lib/jenkins/workspace/ansible_playbook/java-maven-calculator-web-app-master/target/calculator.war
+     dest: /opt/tomcat/webapps/
+  - name: Restart Tomcat Service
+    service:
+     name: tomcat
+     state: restarted
+  - name: check tomcat status
+    shell: service tomcat status
+  - name: Get running processes list from remote host
+    shell: "ps -few | grep tomcat"
+    register: running_processes
+  - name: Debug
+    debug:
+      var: running_processes
