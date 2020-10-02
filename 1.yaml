@@ -1,0 +1,5 @@
+--- #My First YAML PlayBook
+- hosts: all
+  become_user: yes
+  connection: ssh
+  gather_facts: yes
