@@ -40,7 +40,7 @@ stages {
 		    echo 'Code deployed to production'
 		  }
 		  failure {
-		    echo 'Deployment failed'
+		    echo 'Deployment Failed'
 		  }
 		 }
     }
